@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+    <meta charset="utf-8">
+    <title>Titanic prediction</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    
+    </head>
+    <body>
+        <h1>Home</h1>
+        <h3>Get your titanic prediction here!</h3>
+        <p>Enter in the details of a made up person on the titanic voyage </p>
+        <p>We will output a prediction !</p>
+        <button type="button" name="button" onclick="clicked()">Click for alert</button>
+        <form action="{% url 'result' %}">
+          {% csrf_token %}
+            <p>First Name</p>
+            <input type="text" name=first_name>
+            <p>Last Name</p>
+            <input type="text" name=last_name>
+            <p>Title Surname</p>
+            <input type="text" name="title">
+            <p>Economic Class</p>
+            <input type="text" name="pclass">
+            <p>Gender</p>
+            <input type="text" name="sex">
+            <p>Age</p>
+            <input type="text" name="age">
+            <p>Number sum of sposes and simbling</p>
+            <input type="text" name="sibsp">
+            <p>Number sum of children and parents</p>
+            <input type="text" name="parch">
+            <p>Fare of Ticket</p>
+            <input type="text" name="fare">
+            <p>Name or Number of Ticket</p>
+            <input type="text" name="ticket">
+            <p>Name or Number of Cabin</p>
+            <input type="text" name="cabin">
+            <p>Embarked Location</p>
+            <input type="text" name="embarked">
+
+            <br>
+            <br>
+            <input type="submit" name="" value="submit">
+        </form>
+    <script type="text/javascript" src="{% static 'main.js' %}">
+
+    </script>
+    </body>
+</html>

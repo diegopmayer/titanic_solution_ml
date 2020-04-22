@@ -55,7 +55,7 @@
       
       
       
-  </div>
+    </div>
     <p>Enter in the details of a made up person on the titanic voyage </p>
     <p>We will output a prediction !</p>
     <form action="{% url 'result' %}">
@@ -159,8 +159,8 @@
               <label class="required" for="id_parch">
                 Number sum of children and parents :
               </label>
-              <input type="text" name="parch"
-              required id="id_parch", class="vTextField">
+              <input type="number" name="parch"
+              required id="id_parch", class="vIntegerField">
             </div>
           </div>
 

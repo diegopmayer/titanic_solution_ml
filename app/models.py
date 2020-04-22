@@ -44,10 +44,10 @@ class Passenger(models.Model):
     # PassengerId	Pclass	Name	Sex	Age	SibSp	Parch	Ticket	Fare	Cabin	Embarked
     # Get the value and export to csv test.csv
     
-    test_csv = pd.DataFrame([PassengerId, Pclass, Name, 
-                             Sex, Age, SibSp, Parch, Ticket, 
-                             Fare, Cabin, Embarked])
-    test_csv.to_csv('test.csv', index=False)
+    #test_csv = pd.DataFrame([PassengerId, Pclass, Name, 
+    #                         Sex, Age, SibSp, Parch, Ticket, 
+    #                         Fare, Cabin, Embarked])
+    #test_csv.to_csv('test.csv', index=False)
     
     def __str__(self):
         return self.first_name

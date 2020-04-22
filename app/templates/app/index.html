@@ -1,51 +1,232 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-    <meta charset="utf-8">
-    <title>Titanic prediction</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+  <head>
+    <title>Passenger</title>
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css">
     
-    </head>
-    <body>
-        <h1>Home</h1>
-        <h3>Get your titanic prediction here!</h3>
-        <p>Enter in the details of a made up person on the titanic voyage </p>
-        <p>We will output a prediction !</p>
-        <button type="button" name="button" onclick="clicked()">Click for alert</button>
-        <form action="{% url 'result' %}">
-          {% csrf_token %}
-            <p>First Name</p>
-            <input type="text" name=first_name>
-            <p>Last Name</p>
-            <input type="text" name=last_name>
-            <p>Title Surname</p>
-            <input type="text" name="title">
-            <p>Economic Class</p>
-            <input type="text" name="pclass">
-            <p>Gender</p>
-            <input type="text" name="sex">
-            <p>Age</p>
-            <input type="text" name="age">
-            <p>Number sum of sposes and simbling</p>
-            <input type="text" name="sibsp">
-            <p>Number sum of children and parents</p>
-            <input type="text" name="parch">
-            <p>Fare of Ticket</p>
-            <input type="text" name="fare">
-            <p>Name or Number of Ticket</p>
-            <input type="text" name="ticket">
-            <p>Name or Number of Cabin</p>
-            <input type="text" name="cabin">
-            <p>Embarked Location</p>
-            <input type="text" name="embarked">
+    
+    <script type="text/javascript" src="/admin/jsi18n/"></script>
+    <script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+    <script type="text/javascript" src="/static/admin/js/core.js"></script>
+    <script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+    <script type="text/javascript" src="/static/admin/js/actions.min.js"></script>
+    <script type="text/javascript" src="/static/admin/js/urlify.js"></script>
+    <script type="text/javascript" src="/static/admin/js/prepopulate.min.js"></script>
+    <script type="text/javascript" src="/static/admin/js/vendor/xregexp/xregexp.min.js"></script>
+    
+    
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+        
+    <meta charset="utf-8" name="robots" content="NONE,NOARCHIVE">
+  {% load static %}
 
-            <br>
-            <br>
-            <input type="submit" name="" value="submit">
-        </form>
-    <script type="text/javascript" src="{% static 'main.js' %}">
+  </head>
+  <body>
+    <div id="header">
+      <div id="branding">
+      
+        <h1 id="site-name"><a href="/app/templates/app/index.html">Passenger survival prediction on the Titanic</a></h1>
 
-    </script>
-    </body>
+      </div>
+      
+      
+      <div id="user-tools">
+          
+              Welcome,
+              <strong>Passenger</strong>.
+          
+          
+              
+                  <a href="https://www.encyclopedia-titanica.org/titanic/">See the Titanic History</a> /
+              
+              
+                  
+                  
+              
+              
+              <a href="https://github.com/diegopmayer/titanic_solution_ml/blob/master/machine_learning/titanic_solution.ipynb">
+              See the Notebook Soluction</a> /
+              
+          
+      </div>
+      
+      
+      
+  </div>
+    <p>Enter in the details of a made up person on the titanic voyage </p>
+    <p>We will output a prediction !</p>
+    <form action="{% url 'result' %}">
+      {% csrf_token %}
+      <div>
+        <fieldset class="module aligned">
+
+          <div class="form-row field-first_name">
+            <div>
+              <label class="required" for="id_first_name">
+                First Name : 
+              </label>
+              <input type="text" name=first_name required
+              maxlength="12" id="id_first_name" 
+              autocapitalize="on" class="vTextField">
+            </div>
+          </div>
+
+          <div class="form-row field-last_name">
+            <div>
+              <label class="required" for="id_last_name">
+                Last Name :
+              </label>
+              <input type="text" name=last_name required
+              maxlength="15" id="id_last_name" 
+              autocapitalize="on" class="vTextField">
+            </div>
+          </div>
+          
+          <div class="form-row field-title">
+            <div>
+              <label class="required" for="id_title">
+                Title :
+              </label>
+              <select required id="id_title" name="title">
+                <option value selected>--------------------</option>
+                <option value="Mr.">Mr</option>
+                <option value="Master">Master</option>
+                <option value="Dr">Doctor</option>
+                <option value="Rev">Reverendor</option>
+                <option value="Don">Don</option>
+                <option value="Sir">Sir</option>
+                <option value="Capt">Captain</option>
+                <option value="Col">Coronel</option>
+                <option value="Major">Major</option>
+                <option value="Mrs.">Mrs</option>
+                <option value="Miss.">Miss</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row field-pclass">
+            <div>
+              <label class="required" for="id_pclass">
+                Economic Class : 
+                <select required id="id_pclass" name="pclass">
+                  <option value selected>--------------------</option>
+                  <option value="1">1 - First Class</option>
+                  <option value="2">2 - Second Class</option>
+                  <option value="3">3 - Third Class</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-row field-sex">
+            <div>
+              <label class="required" for="id_sex">
+                Gender :
+              </label>
+              <select required id="id_sex" name="sex">
+                <option value selected>--------------------</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row field-age">
+            <div>
+              <label class="required" for="id_age">
+                Age :
+              </label>
+              <input type="number" name="age" 
+              required id="id_age" class="vIntegerField">
+            </div>
+          </div>
+          
+          <div class="form-row field-sibsp">
+            <div>
+              <label class="required" for="id_sibsp">
+                Number sum of sposes and simbling :
+              </label>
+              <input type="number" name="sibsp"
+              required id="id_sibsp" class="vIntegerField">
+            </div>
+          </div>
+
+          <div class="form-row field-parch">
+            <div>
+              <label class="required" for="id_parch">
+                Number sum of children and parents :
+              </label>
+              <input type="text" name="parch"
+              required id="id_parch", class="vTextField">
+            </div>
+          </div>
+
+          <div class="form-row field-fare">
+            <div>
+              <label class="required" for="id_fare">
+                Fare of Ticket :
+              </label>
+              <input type="number" name="fare"
+              required id="id_fare">
+            </div>
+          </div>
+          
+          <div class="form-row field-ticket">
+            <div>
+              <label class="required" for="id_ticket">
+                Name or Number of Ticket :
+              </label>
+              <input type="text" name="ticket"
+              required id="id_ticket" class="cTextField">
+            </div>
+          </div>
+          
+          <div class="form-row field-cabin">
+            <div>
+              <label class="required" for="id_cabin">
+                Name or Number of Cabin :
+              </label>
+              <input type="text" name="cabin"
+              required id="id_cabin" maxlength="3" 
+              autocapitalize="on" class="vTextField">
+            </div>
+          </div>
+
+          <div class="form-row field-embarked">
+            <div>
+              <label class="required" for="id_embarked">
+                Embarked Location :
+              </label>
+              <select required id="id_embarked" name="embarked">
+                <option value selected>--------------------</option>
+                <option value="S">England - Southampton</option>
+                <option value="C">France  - Cherbourg</option>
+                <option value="Q">Ireland - Queenstown</option>
+              </select>
+            </div>
+          </div>
+
+          <br>
+          <br>
+
+        </fieldset>
+
+        <div class="submit-row">
+
+          <input type="submit" value="Submit" class="default" name="_submit">
+          
+        </div>
+        <script type="text/javascript" id="django-admin-form-add-constants" src="/static/admin/js/change_form.js">
+        </script>
+        <script type="text/javascript" id="django-admin-prepopulated-fields-constants" src="/static/admin/js/prepopulate_init.js" data-prepopulated-fields="[]">
+        </script>
+
+      </div>
+    </form>
+
+  </script>
+  </body>
 </html>

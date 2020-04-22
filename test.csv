@@ -1,0 +1,12 @@
+0
+1311
+<django.db.models.fields.IntegerField>
+<django.db.models.fields.CharField> <django.db.models.fields.CharField> <django.db.models.fields.CharField>
+<django.db.models.fields.CharField>
+<django.db.models.fields.IntegerField>
+<django.db.models.fields.IntegerField>
+<django.db.models.fields.IntegerField>
+<django.db.models.fields.CharField>
+<django.db.models.fields.DecimalField>
+<django.db.models.fields.CharField>
+<django.db.models.fields.CharField>

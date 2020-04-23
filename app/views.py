@@ -32,4 +32,5 @@ def result(request):
     return render(request, 'C:/Users/diego.mayer/Documents/'
                   'developer/Projects/titanic/app/templates/'
                   'app/result.html', {'prediction' : prediction,
-                                     'name': Name})
+                                     'title': Title,
+                                     'last_name': Last_name})

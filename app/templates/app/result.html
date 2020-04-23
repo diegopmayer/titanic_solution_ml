@@ -1,16 +1,41 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title>result</title>
+    <title>Survived or Died?</title>
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css">
+    
+    
+    <script type="text/javascript" src="/admin/jsi18n/"></script>
+    <script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+    <script type="text/javascript" src="/static/admin/js/core.js"></script>
+    <script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+    <script type="text/javascript" src="/static/admin/js/actions.min.js"></script>
+    <script type="text/javascript" src="/static/admin/js/urlify.js"></script>
+    <script type="text/javascript" src="/static/admin/js/prepopulate.min.js"></script>
+    <script type="text/javascript" src="/static/admin/js/vendor/xregexp/xregexp.min.js"></script>
+    
+    
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+    <meta charset="utf-8" name="robots" content="NONE,NOARCHIVE">
+  {% load static %}
+
   </head>
   <body>
-    <h1>Result From Prediction</h1>
-    <p>Dear <br>
-        {{name}}</p>
-    <p>You would have...</p>
-    <p>{{prediction}} !!</p>
+    <div id="header">
+      <div id="branding">
+        <h1 id="site-name"><a>Prediction Result</a></h1>
+      </div>
+    </div>
+    <div>
 
+      <img src="https://i.gifer.com/KtAQ.gif" alt="", width="40%">
+      <p>{{title}} {{last_name}}</p>
+      <p>You would have...</p>
+      <p>{{prediction}} !!</p>
+    </div>
     <a href="{% url 'home' %}">Clique to new prediction</a>
   </body>
 </html>

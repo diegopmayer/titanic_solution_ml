@@ -56,179 +56,214 @@
       
       
     </div>
-    <img src="https://assets.papelpop.com/wp-content/uploads/2017/12/giphy-2.gif" 
-    style="width:40%">
+    <img src="/media/header_edited.jpeg" style="width:100%" height="300">
 
     <p>Enter in the details of a made up person on the titanic voyage </p>
     <p>We will output a prediction !</p>
-    <form action="{% url 'result' %}">
-      {% csrf_token %}
-      <div>
-        <fieldset class="module aligned">
-          <div class="form-row field-first_name">
-            <div>
-              <label class="required" for="id_first_name">
-                First Name : 
-              </label>
-              <input type="text" name=first_name required
-              maxlength="12" id="id_first_name" 
-              autocapitalize="on" class="vTextField">
-            </div>
-          </div>
+    <div class="container">
+      <form action="{% url 'result' %}">
 
-          <div class="form-row field-last_name">
-            <div>
-              <label class="required" for="id_last_name">
-                Last Name :
-              </label>
-              <input type="text" name=last_name required
-              maxlength="15" id="id_last_name" 
-              autocapitalize="on" class="vTextField">
-            </div>
-          </div>
-          
-          <div class="form-row field-title">
-            <div>
-              <label class="required" for="id_title">
-                Title :
-              </label>
-              <select required id="id_title" name="title">
-                <option value selected>--------------------</option>
-                <option value="Mr.">Mr</option>
-                <option value="Master">Master</option>
-                <option value="Dr">Doctor</option>
-                <option value="Rev">Reverendor</option>
-                <option value="Don">Don</option>
-                <option value="Sir">Sir</option>
-                <option value="Capt">Captain</option>
-                <option value="Col">Coronel</option>
-                <option value="Major">Major</option>
-                <option value="Mrs.">Mrs</option>
-                <option value="Miss.">Miss</option>
-              </select>
-            </div>
-          </div>
+        {% csrf_token %}
 
-          <div class="form-row field-pclass">
-            <div>
-              <label class="required" for="id_pclass">
-                Economic Class : 
-                <select required id="id_pclass" name="pclass">
+          <fieldset class="module aligned">
+            <div class="form-row field-first_name">
+              <div>
+                <label class="required" for="id_first_name">
+                  First Name : 
+                </label>
+                <input type="text" name=first_name required
+                maxlength="12" id="id_first_name" 
+                autocapitalize="on" class="vTextField">
+              </div>
+            </div>
+  
+            <div class="form-row field-last_name">
+              <div>
+                <label class="required" for="id_last_name">
+                  Last Name :
+                </label>
+                <input type="text" name=last_name required
+                maxlength="15" id="id_last_name" 
+                autocapitalize="on" class="vTextField">
+              </div>
+            </div>
+            
+            <div class="form-row field-title">
+              <div>
+                <label class="required" for="id_title">
+                  Title :
+                </label>
+                <select required id="id_title" name="title">
                   <option value selected>--------------------</option>
-                  <option value="1">1 - First Class</option>
-                  <option value="2">2 - Second Class</option>
-                  <option value="3">3 - Third Class</option>
+                  <option value="Mr.">Mr</option>
+                  <option value="Master">Master</option>
+                  <option value="Dr">Doctor</option>
+                  <option value="Rev">Reverendor</option>
+                  <option value="Don">Don</option>
+                  <option value="Sir">Sir</option>
+                  <option value="Capt">Captain</option>
+                  <option value="Col">Coronel</option>
+                  <option value="Major">Major</option>
+                  <option value="Mrs.">Mrs</option>
+                  <option value="Miss.">Miss</option>
                 </select>
-              </label>
+              </div>
             </div>
-          </div>
-
-          <div class="form-row field-sex">
-            <div>
-              <label class="required" for="id_sex">
-                Gender :
-              </label>
-              <select required id="id_sex" name="sex">
-                <option value selected>--------------------</option>
-                <option value="female">Female</option>
-                <option value="male">Male</option>
-              </select>
+  
+            <div class="form-row field-sex">
+              <div>
+                <label class="required" for="id_sex">
+                  Gender :
+                </label>
+                <select required id="id_sex" name="sex">
+                  <option value selected>--------------------</option>
+                  <option value="female">Female</option>
+                  <option value="male">Male</option>
+                </select>
+              </div>
             </div>
-          </div>
-
-          <div class="form-row field-age">
-            <div>
-              <label class="required" for="id_age">
-                Age :
-              </label>
-              <input type="number" name="age" 
-              required id="id_age" class="vIntegerField">
+  
+            <div class="form-row field-age">
+              <div>
+                <label class="required" for="id_age">
+                  Age :
+                </label>
+                <input type="number" name="age" 
+                required id="id_age" class="vIntegerField">
+              </div>
             </div>
-          </div>
-          
-          <div class="form-row field-sibsp">
-            <div>
-              <label class="required" for="id_sibsp">
-                Number sum of sposes and simbling :
-              </label>
-              <input type="number" name="sibsp"
-              required id="id_sibsp" class="vIntegerField">
+            
+            <div class="form-row field-sibsp">
+              <div>
+                <label class="required" for="id_sibsp">
+                  Number sum of sposes and sibling :
+                </label>
+                <input type="number" name="sibsp"
+                required id="id_sibsp" class="vIntegerField"> 
+                * Obs. This is a number of brothers and sisters plus (+) sposes that you travelling together
+              </div>
             </div>
-          </div>
-
-          <div class="form-row field-parch">
-            <div>
-              <label class="required" for="id_parch">
-                Number sum of children and parents :
-              </label>
-              <input type="number" name="parch"
-              required id="id_parch", class="vIntegerField">
+  
+            <div class="form-row field-parch">
+              <div>
+                <label class="required" for="id_parch">
+                  Number sum of children and parents :
+                </label>
+                <input type="number" name="parch"
+                required id="id_parch", class="vIntegerField">
+                * Obs. This is a number of father and mother plus (+) sons and daughter that you travelling together
+              </div>
             </div>
-          </div>
 
-          <div class="form-row field-fare">
-            <div>
-              <label class="required" for="id_fare">
-                Fare of Ticket :
-              </label>
-              <input type="number" name="fare"
-              required id="id_fare">
+            <style>
+              table, th, td {
+                border: 1px solid black;
+              }
+            </style>
+            <table style="width:100%">
+              <tr>
+                <td width=50% valign="top">
+                  <div class="form-row field-pclass">
+                    <div>
+                      <label class="required" for="id_pclass">
+                        Economic Class : 
+                      </label>
+                      <select required id="id_pclass" name="pclass">
+                        <option value selected>--------------------</option>
+                        <option value="1">1 - First Class</option>
+                        <option value="2">2 - Second Class</option>
+                        <option value="3">3 - Third Class</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-row field-fare">
+                    <div>
+                      <label class="required" for="id_fare">
+                        Fare of Ticket :
+                      </label>
+                      <input type="number" name="fare"
+                      required id="id_fare"><br><br>
+                      A mean fare in thousand pounds by Economic Class is: <br>
+                      1 - First Class: 78 | <br>
+                      2 - Second Class: 20| <br>
+                      3 - Third Class: 13 | <br>
+                      * For more data see at rith side or below to table original fare
+                    </div>
+                  </div>
+                  
+                  <div class="form-row field-ticket">
+                    <div>
+                      <label class="required" for="id_ticket">
+                        Name or Number of Ticket:
+                      </label>
+                      <input type="text" name="ticket"
+                      required id="id_ticket" class="cTextField">
+                      * For more data see at below a original ticket picture
+                    </div>
+                  </div>
+                  
+                  <div class="form-row field-cabin">
+                    <div>
+                      <label class="required" for="id_cabin">
+                        Name or Number of Cabin :
+                      </label>
+                      <input type="text" name="cabin"
+                      required id="id_cabin" maxlength="3" 
+                      autocapitalize="on" class="vTextField"><br>
+                      * The cabin is a number of cabin is the same of Deck, take a look in the table of fare tickets at rigth side or below
+                    </div>
+                  </div>
+        
+                  <div class="form-row field-embarked">
+                    <div>
+                      <label class="required" for="id_embarked">
+                        Embarked Location :
+                      </label>
+                      <select required id="id_embarked" name="embarked">
+                        <option value selected>--------------------</option>
+                        <option value="S">England - Southampton</option>
+                        <option value="C">France  - Cherbourg</option>
+                        <option value="Q">Ireland - Queenstown</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <img src="https://i.pinimg.com/originals/65/19/f6/6519f6681f13defd34a98f1ad90e3fa7.jpg" 
+                  style="width:100%;" height="350">
+
+                </td>
+                <td width=50% valign="top">
+                  <section class="block container" id="maincontent">	<div class="push push-20"></div>
+                    <div class="singular blog-posts component sixteen columns">
+                      <article class="post">
+                        
+                        <div itemprop="author" itemscope="" itemtype="http://schema.org/Person" class="byline author vcard f70">
+                              by
+                              <a class="fn" href="https://www.encyclopedia-titanica.org/titanic-passenger-revenue.html" itemprop="url"><span itemprop="name">Captain Charles B. Weeks</span></a>
+
+                        </div>
+                        <div class="push push-20"></div>
+                        
+                        <div class="Normal"><p>Table of fare of tickets</p>
+                          <table cellpadding="0" cellspacing="0">	<colgroup>		<col width="68">		<col width="63">		<col span="2" width="68">		<col width="63">		<col width="68">		<col width="73">	</colgroup>	<tbody>		<tr>			<td>				<strong>CLASS</strong></td>			<td>				<strong>Deck</strong></td>			<td>				<strong>Type Rm.</strong></td>			<td>				<strong># Of Rms.</strong></td>			<td>				<strong># of Berths</strong></td>			<td>				<strong>Rate</strong></td>			<td>				<strong>Revenue</strong></td>		</tr>		<tr>			<td>				First</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				A</td>			<td>				Single</td>			<td>				30</td>			<td>				30</td>			<td>				£30</td>			<td>				£900</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				A</td>			<td>				Triple</td>			<td>				4</td>			<td>				12</td>			<td>				£30</td>			<td>				£360</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				B</td>			<td>				Parlour</td>			<td>				2</td>			<td>				&nbsp;</td>			<td>				£870</td>			<td>				£1740</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				B</td>			<td>				Single</td>			<td>				31</td>			<td>				31</td>			<td>				£30</td>			<td>				£930</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				B</td>			<td>				Double</td>			<td>				34</td>			<td>				68</td>			<td>				£30</td>			<td>				£2040</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				B</td>			<td>				Triple</td>			<td>				8</td>			<td>				24</td>			<td>				£30</td>			<td>				£720</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				C</td>			<td>				Parlour</td>			<td>				2</td>			<td>				&nbsp;</td>			<td>				£870</td>			<td>				£1740</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				C</td>			<td>				Single</td>			<td>				15</td>			<td>				15</td>			<td>				£30</td>			<td>				£450</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				C</td>			<td>				Double</td>			<td>				62</td>			<td>				124</td>			<td>				£30</td>			<td>				£3720</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				C</td>			<td>				Triple</td>			<td>				57<div class="fb-quote fb_iframe_widget" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=1737275773224897&amp;container_width=1349&amp;href=https%3A%2F%2Fwww.encyclopedia-titanica.org%2Ftitanic-passenger-revenue.html&amp;locale=en_GB&amp;sdk=joey" style="position: absolute; left: -72.5px; top: -41px;"><span style="vertical-align: bottom; width: 169px; height: 47px;"><iframe name="f343cd9ee7c28a4" width="1000px" height="1000px" data-testid="fb:quote Facebook Social Plugin" title="fb:quote Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v3.2/plugins/quote.php?app_id=1737275773224897&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D46%23cb%3Df27da824483dc8%26domain%3Dwww.encyclopedia-titanica.org%26origin%3Dhttps%253A%252F%252Fwww.encyclopedia-titanica.org%252Ff2728215a50bb28%26relation%3Dparent.parent&amp;container_width=1349&amp;href=https%3A%2F%2Fwww.encyclopedia-titanica.org%2Ftitanic-passenger-revenue.html&amp;locale=en_GB&amp;sdk=joey" style="border: none; visibility: visible; width: 169px; height: 47px;" class=""></iframe></span></div></td>			<td>				171</td>			<td>				£30</td>			<td>				£5130</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				D</td>			<td>				Single</td>			<td>				11</td>			<td>				11</td>			<td>				£30</td>			<td>				£330</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				D</td>			<td>				Double</td>			<td>				8</td>			<td>				16</td>			<td>				£30</td>			<td>				£480</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				D</td>			<td>				Triple</td>			<td>				30</td>			<td>				90</td>			<td>				£30</td>			<td>				£2700</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				E</td>			<td>				Single</td>			<td>				9</td>			<td>				9</td>			<td>				£30</td>			<td>				£270</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				E</td>			<td>				Double</td>			<td>				2</td>			<td>				4</td>			<td>				£30</td>			<td>				£120</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				E</td>			<td>				Triple</td>			<td>				28</td>			<td>				84</td>			<td>				£30</td>			<td>				£2520</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				£24,150</td>		</tr>		<tr>			<td>				CLASS</td>			<td>				Deck</td>			<td>				Type Rm.</td>			<td>				# Of Rms.</td>			<td>				# of Berths</td>			<td>				Rate</td>			<td>				Revenue</td>		</tr>		<tr>			<td>				Second</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				D</td>			<td>				Double</td>			<td>				19</td>			<td>				38</td>			<td>				£12</td>			<td>				£456</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				D</td>			<td>				Quad</td>			<td>				20</td>			<td>				80</td>			<td>				£12</td>			<td>				£960</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				E</td>			<td>				Double</td>			<td>				15</td>			<td>				30</td>			<td>				£12</td>			<td>				£360</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				E</td>			<td>				Quad</td>			<td>				49</td>			<td>				196</td>			<td>				£12</td>			<td>				£2352</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				F</td>			<td>				Double</td>			<td>				19</td>			<td>				38</td>			<td>				£12</td>			<td>				£456</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				F</td>			<td>				Quad</td>			<td>				45</td>			<td>				181</td>			<td>				£12</td>			<td>				£2160</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				G</td>			<td>				Double</td>			<td>				23</td>			<td>				46</td>			<td>				£12</td>			<td>				£552</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				G</td>			<td>				Triple</td>			<td>				2</td>			<td>				6</td>			<td>				£12</td>			<td>				£72</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				G</td>			<td>				Quad</td>			<td>				15</td>			<td>				60</td>			<td>				£12</td>			<td>				£720</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				£8088</td>		</tr>		<tr>			<td>				Third</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				D</td>			<td>				Double</td>			<td>				4</td>			<td>				8</td>			<td>				£3</td>			<td>				£24</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				D</td>			<td>				Sextet</td>			<td>				7</td>			<td>				42</td>			<td>				£3</td>			<td>				£126</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				E</td>			<td>				Double</td>			<td>				26</td>			<td>				52</td>			<td>				£3</td>			<td>				£156</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				E</td>			<td>				Quad</td>			<td>				40</td>			<td>				160</td>			<td>				£3</td>			<td>				£480</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				E</td>			<td>				Sextet</td>			<td>				8</td>			<td>				48</td>			<td>				£3</td>			<td>				£144</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				F</td>			<td>				Double</td>			<td>				31</td>			<td>				62</td>			<td>				£3</td>			<td>				£186</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				F</td>			<td>				Quad</td>			<td>				59</td>			<td>				236</td>			<td>				£3</td>			<td>				£708</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				F</td>			<td>				Sextet</td>			<td>				18</td>			<td>				108</td>			<td>				£3</td>			<td>				£324</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				G</td>			<td>				Double</td>			<td>				5</td>			<td>				10</td>			<td>				£3</td>			<td>				£30</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				G</td>			<td>				Quad</td>			<td>				13</td>			<td>				52</td>			<td>				£3</td>			<td>				£156</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				G</td>			<td>				Sextet</td>			<td>				4</td>			<td>				24</td>			<td>				£3</td>			<td>				£72</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				G</td>			<td>				Octet</td>			<td>				5</td>			<td>				40</td>			<td>				£3</td>			<td>				£120</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				G</td>			<td>				10</td>			<td>				2</td>			<td>				20</td>			<td>				£3</td>			<td>				£60</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				G</td>			<td>				OPEN</td>			<td>				&nbsp;</td>			<td>				164</td>			<td>				£3</td>			<td>				£492</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				£3078</td>		</tr>		<tr>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				&nbsp;</td>			<td>				Total</td>			<td>				£35,316</td>		</tr>	</tbody></table><p>	First Class £24,150/£35,316 = 68.4% Second Class £8,088/£35,316 = 22.9% Third Class £3,078/£35,316 = 8.7%</p>
+                          <div class="push push-40"></div>
+                        </div>
+                      </article>
+                    </div>
+                  </section>
+                </td>
+              </tr>
+            </table>
+          </fieldset>
+            <div class="submit-row">
+                    <input type="submit" value="Submit" class="default" name="_submit">
             </div>
-          </div>
-          
-          <div class="form-row field-ticket">
-            <div>
-              <label class="required" for="id_ticket">
-                Name or Number of Ticket :
-              </label>
-              <input type="text" name="ticket"
-              required id="id_ticket" class="cTextField">
-            </div>
-          </div>
-          
-          <div class="form-row field-cabin">
-            <div>
-              <label class="required" for="id_cabin">
-                Name or Number of Cabin :
-              </label>
-              <input type="text" name="cabin"
-              required id="id_cabin" maxlength="3" 
-              autocapitalize="on" class="vTextField">
-            </div>
-          </div>
-
-          <div class="form-row field-embarked">
-            <div>
-              <label class="required" for="id_embarked">
-                Embarked Location :
-              </label>
-              <select required id="id_embarked" name="embarked">
-                <option value selected>--------------------</option>
-                <option value="S">England - Southampton</option>
-                <option value="C">France  - Cherbourg</option>
-                <option value="Q">Ireland - Queenstown</option>
-              </select>
-            </div>
-          </div>
-
-          <br>
-          <br>
-
-        </fieldset>
-        <img src="https://assets.papelpop.com/wp-content/uploads/2017/12/f7db7c23eccdf6fa03cf10677d39bad8.gif" style="width:30%;">
-
-        <div class="submit-row">
-
-          <input type="submit" value="Submit" class="default" name="_submit">
-          
-        </div>
-        <script type="text/javascript" id="django-admin-form-add-constants" src="/static/admin/js/change_form.js">
-        </script>
-        <script type="text/javascript" id="django-admin-prepopulated-fields-constants" src="/static/admin/js/prepopulate_init.js" data-prepopulated-fields="[]">
-        </script>
-
-      </div>
-    </form>
-  </script>
+          <script type="text/javascript" id="django-admin-form-add-constants" src="/static/admin/js/change_form.js">
+          </script>
+          <script type="text/javascript" id="django-admin-prepopulated-fields-constants" src="/static/admin/js/prepopulate_init.js" data-prepopulated-fields="[]">
+          </script>
+      </form>
+    </div>
   </body>
 </html>

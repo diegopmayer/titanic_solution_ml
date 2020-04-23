@@ -813,7 +813,7 @@ input[type="submit"], button {
     }
 
     .submit-row input, .submit-row input.default, .submit-row a, .submit-row a.closelink {
-        float: none;
+        float: inline-start;
         margin: 0 0 10px;
         text-align: center;
     }

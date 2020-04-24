@@ -17,7 +17,7 @@ def prediction_model(x):
     mdl.fit(Xtrain, ytrain)
     prediction = mdl.predict(Xtest)
     if prediction[-1] == 0:
-        return "Not survived"
+        return "Not Survived"
     elif prediction[-1] == 1:
         return "Survived"
     else:

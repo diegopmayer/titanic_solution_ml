@@ -34,3 +34,8 @@ def result(request):
                   'app/result.html', {'prediction' : prediction,
                                      'title': Title,
                                      'last_name': Last_name})
+
+def media(request):
+    return render(request, 'C:/Users/diego.mayer/Documents/'
+                  'developer/Projects/titanic/app/templates/'
+                  'app/result.html')

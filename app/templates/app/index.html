@@ -2,64 +2,42 @@
 <html lang="en" dir="ltr">
   <head>
     <title>Passenger</title>
-    <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
-    <link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css">
+    <link rel="stylesheet" type="text/css" href="/static/app/css/base.css">
+    <link rel="stylesheet" type="text/css" href="/static/app/css/forms.css">
     
-    
-    <script type="text/javascript" src="/admin/jsi18n/"></script>
-    <script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
-    <script type="text/javascript" src="/static/admin/js/core.js"></script>
-    <script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
-    <script type="text/javascript" src="/static/admin/js/actions.min.js"></script>
-    <script type="text/javascript" src="/static/admin/js/urlify.js"></script>
-    <script type="text/javascript" src="/static/admin/js/prepopulate.min.js"></script>
-    <script type="text/javascript" src="/static/admin/js/vendor/xregexp/xregexp.min.js"></script>
-    
-    
-        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
-        
+      <link rel="stylesheet" type="text/css" href="/static/app/css/responsive.css">
+      
     <meta charset="utf-8" name="robots" content="NONE,NOARCHIVE">
-  {% load static %}
 
+    <style>
+      table, th, td {
+        border: 1px solid rgb(32, 29, 29);
+      }
+    </style>
+  {% load static %}
   </head>
   <body>
     <div id="header">
       <div id="branding">
-      
         <h1 id="site-name"><a href="/app/templates/app/index.html">Passenger survival prediction on the Titanic</a></h1>
-
       </div>
-      
-      
       <div id="user-tools">
           
               Welcome,
               <strong>Passenger</strong>.
-          
-          
               
-                  <a href="https://www.encyclopedia-titanica.org/titanic/">See the Titanic History</a> /
-              
-              
-                  
-                  
-              
+                <a href="https://www.encyclopedia-titanica.org/titanic/">See the Titanic History</a> /
               
               <a href="https://github.com/diegopmayer/titanic_solution_ml/blob/master/machine_learning/titanic_solution.ipynb">
               See the Notebook Soluction</a> /
               
-          
       </div>
-      
-      
-      
     </div>
-    <img src="/media/header_edited.jpeg" style="width:100%" height="300">
+    <img src="{% static '/app/images/header_edited.jpeg' %}" alt="Header" style="width:100%;" height="600">
 
     <p>Enter in the details of a made up person on the titanic voyage </p>
     <p>We will output a prediction !</p>
+
     <div class="container">
       <form action="{% url 'result' %}">
 
@@ -155,11 +133,6 @@
               </div>
             </div>
 
-            <style>
-              table, th, td {
-                border: 1px solid black;
-              }
-            </style>
             <table style="width:100%">
               <tr>
                 <td width=50% valign="top">
@@ -226,11 +199,13 @@
                         <option value="C">France  - Cherbourg</option>
                         <option value="Q">Ireland - Queenstown</option>
                       </select>
+                      <div class="submit-row">
+                        <input type="submit" value="Submit" class="default" name="_submit">
+                      </div>
                     </div>
                   </div>
 
-                  <img src="https://i.pinimg.com/originals/65/19/f6/6519f6681f13defd34a98f1ad90e3fa7.jpg" 
-                  style="width:100%;" height="350">
+                  <img src="{% static '/app/images/ticket.jpg' %}" alt="" style="width:100%;" height="600">
 
                 </td>
                 <td width=50% valign="top">
@@ -256,9 +231,6 @@
               </tr>
             </table>
           </fieldset>
-            <div class="submit-row">
-                    <input type="submit" value="Submit" class="default" name="_submit">
-            </div>
           <script type="text/javascript" id="django-admin-form-add-constants" src="/static/admin/js/change_form.js">
           </script>
           <script type="text/javascript" id="django-admin-prepopulated-fields-constants" src="/static/admin/js/prepopulate_init.js" data-prepopulated-fields="[]">
